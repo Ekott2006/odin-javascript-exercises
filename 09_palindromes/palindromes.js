@@ -1,14 +1,20 @@
 const palindromes = function (text) {
-    // let result = "";
+  let result = "";
+  let alphabetWord = "";
 
-    // for (let index = text.length - 1; index >= 0; index--) {
-    //   // TODO: CHECK FOR ALPHABETS ONLY
-    //   if (index.toString().match("[a-zA-Z1-9]")) {
-    //     result += text[index];
-    //   }
-    // }
-  
-    // return result == text;
+  for (const t of text) {
+    if (/[0-9a-zA-Z]/.test(t)) {
+      alphabetWord += t.toUpperCase();
+    }
+  }
+
+  for (let index = text.length - 1; index >= 0; index--) {
+    if (/[0-9a-zA-Z]/.test(text[index])) {
+      result += text[index].toUpperCase();
+    }
+  }
+
+  return result == alphabetWord;
 };
 
 // Do not edit below this line
